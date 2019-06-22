@@ -1,0 +1,14 @@
+{
+    "angelhack": {
+        "awscloudformation": {
+            "AuthRoleName": "physio-client-angelhack-20190622181919-authRole",
+            "UnauthRoleArn": "arn:aws:iam::315438396106:role/physio-client-angelhack-20190622181919-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::315438396106:role/physio-client-angelhack-20190622181919-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "physio-client-angelhack-20190622181919-deployment",
+            "UnauthRoleName": "physio-client-angelhack-20190622181919-unauthRole",
+            "StackName": "physio-client-angelhack-20190622181919",
+            "StackId": "arn:aws:cloudformation:us-east-1:315438396106:stack/physio-client-angelhack-20190622181919/2738d720-94ec-11e9-a71e-0a6fb8e9c8ee"
+        }
+    }
+}
