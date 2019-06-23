@@ -4,5 +4,25 @@
 			"service": "S3AndCloudFront",
 			"providerPlugin": "awscloudformation"
 		}
+	},
+	"auth": {
+		"cognito64681fff": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"xr": {
+		"SumerianAmplify": {
+			"service": "Sumerian",
+			"providerPlugin": "awscloudformation"
+		},
+		"SumerianAmplify1": {
+			"service": "Sumerian",
+			"providerPlugin": "awscloudformation"
+		},
+		"SumerianAmplify2": {
+			"service": "Sumerian",
+			"providerPlugin": "awscloudformation"
+		}
 	}
 }

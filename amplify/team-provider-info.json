@@ -9,6 +9,31 @@
             "UnauthRoleName": "physio-client-angelhack-20190622181919-unauthRole",
             "StackName": "physio-client-angelhack-20190622181919",
             "StackId": "arn:aws:cloudformation:us-east-1:315438396106:stack/physio-client-angelhack-20190622181919/2738d720-94ec-11e9-a71e-0a6fb8e9c8ee"
+        },
+        "categories": {
+            "auth": {
+                "cognito64681fff": {}
+            },
+            "xr": {
+                "SumerianAmplify": {
+                    "url": "https://sumerian.us-east-1.amazonaws.com/20180801/projects/Drafts/release/authTokens?sceneId=ea9011b8eaa34795af1ee07d00958c89.scene",
+                    "sceneId": "ea9011b8eaa34795af1ee07d00958c89.scene",
+                    "region": "us-east-1",
+                    "projectName": "Drafts"
+                },
+                "SumerianAmplify1": {
+                    "url": "https://sumerian.us-east-1.amazonaws.com/20180801/projects/Drafts/release/authTokens?sceneId=ea9011b8eaa34795af1ee07d00958c89.scene",
+                    "sceneId": "ea9011b8eaa34795af1ee07d00958c89.scene",
+                    "region": "us-east-1",
+                    "projectName": "Drafts"
+                },
+                "SumerianAmplify2": {
+                    "url": "https://sumerian.us-east-1.amazonaws.com/20180801/projects/Drafts/release/authTokens?sceneId=ea9011b8eaa34795af1ee07d00958c89.scene",
+                    "sceneId": "ea9011b8eaa34795af1ee07d00958c89.scene",
+                    "region": "us-east-1",
+                    "projectName": "Drafts"
+                }
+            }
         }
     }
 }

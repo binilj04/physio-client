@@ -1,0 +1,10 @@
+{
+    "AuthRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "UnauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "AuthPolicyName": "sumerian-auth-physio-clientI3Fvd",
+    "UnauthPolicyName": "sumerian-unauth-physio-clientI3Fvd"
+}

@@ -13,17 +13,7 @@ import aws_exports from './aws-exports';
 import { SumerianScene } from 'aws-amplify-react';
 import scene_config from './sumerian_exports';
 
-Amplify.configure(aws_exports);
-XR.configure({ // XR category configuration
-  SumerianProvider: { // Sumerian-specific configuration
-    region: 'us-east-1', // Sumerian scene region
-    scenes: {
-      "SumerianAmplify": {   // Friendly scene name
-          sceneConfig: scene_config // Scene JSON configuration
-        },
-    }
-  }
-});
+
 
 
 
@@ -32,14 +22,25 @@ XR.configure({ // XR category configuration
 
 function App() {
 
-  
-  // Load scene with sceneName: "scene1" into dom element id: "sumerian-scene-dom-id"
-  const fetchData = async () => {
-    console.log("123")
-    await XR.loadScene("SumerianAmplify", "sumerian-scene-dom-id");
-    XR.start("SumerianAmplify");
-    console.log("456")
+  Amplify.configure(aws_exports);
+XR.configure({ // XR category configuration
+  SumerianProvider: { // Sumerian-specific configuration
+    region: 'us-east-1', // Sumerian scene region
+    scenes: {
+      "SumerianAmplify2": {   // Friendly scene name
+          sceneConfig: scene_config // Scene JSON configuration
+        },
+    }
   }
+});
+  
+  // // Load scene with sceneName: "scene1" into dom element id: "sumerian-scene-dom-id"
+  // const fetchData = async () => {
+  //   console.log("123")
+  //   await XR.loadScene("SumerianAmplify", "sumerian-scene-dom-id");
+  //   XR.start("SumerianAmplify");
+  //   console.log("456")
+  // }
   
 
   var local_video=document.getElementById('video'+0);
@@ -129,7 +130,7 @@ function getpose(local_video){
       client.publish(localStream, handleFail);
      
      getpose(local_video);
-     fetchData();
+    //  fetchData();
     
       
     }, function (err) {
@@ -186,7 +187,7 @@ client.on('stream-subscribed', function (evt) {
         <SumerianScene sceneName="scene2" />
         </div> */}
         <div style={{height: '600px'}}>  
-          <SumerianScene sceneName='SumerianAmplify' />
+          <SumerianScene sceneName='SumerianAmplify2' />
         </div>
         <a
           className="App-link"
