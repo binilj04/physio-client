@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './w3.css';
 import AgoraRTC from 'agora-rtc-sdk'
 import * as posenet from '@tensorflow-models/posenet';
 
@@ -176,22 +177,42 @@ client.on('stream-subscribed', function (evt) {
   return (
 
     
-    <div className="App">
+    <div className="App, w3-container, w3-margin-top">
       <header className="App-header">
-  
-        <div id={"me"} className={"me"} style={{width:'400px',height:'300px'}}></div>
-        <div id={"remote-container"} style={{width:'400px',height:'300px'}}></div>
+      <div className="w3-col">
+        <div className="w3-row" style={{width:'35%', display:'none'}}>
+          hello
+        </div>
+        <div className="w3-row, w3-right" style={{width:'65%'}}>
+          <div id={"me"} className={"me, w3-panel, w3-bottombar, w3-topbar, w3-leftbar, w3-rightbar"} style={{width:'400px',height:'300px'}}></div>
+        </div>
+      </div>
+      <br></br>
+
+      <div className="w3-col">
+        <div className="w3-row" style={{width:'20%', display:'none'}}>
+          hello
+        </div>
+        <div className="w3-row, w3-right" style={{width:'80%'}}>
+          <div id={"remote-container"} style={{width:'800px',height:'600px'}}></div>
+        </div>
+      </div>
+
+
+
+
+        
 
         <div id={"sumerian-scene-dom-id"} style={{width:'270px',height:'400px',display:'inline-block'}}></div>
 
         {/* <div style={{width:'270px',height:'400px',display:'inline-block'}}>
         <SumerianScene sceneName="scene2" />
         </div> */}
+        <div style={{zIndex: '-3'}}>
         <div style={{height: '600px'}}>  
           <SumerianScene sceneName='SumerianAmplify2' />
         </div>
-
-
+        </div>
        
       </header>
     </div>
