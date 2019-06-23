@@ -13,6 +13,8 @@ import aws_exports from './aws-exports';
 import { SumerianScene } from 'aws-amplify-react';
 import scene_config from './sumerian_exports';
 
+import AWS from 'aws-sdk'
+
 
 
 
@@ -21,6 +23,8 @@ import scene_config from './sumerian_exports';
 
 
 function App() {
+
+  const Polly = new AWS.Polly({ signatureVersion: 'v4', region: 'us-east-1' })
 
   Amplify.configure(aws_exports);
 XR.configure({ // XR category configuration
@@ -178,8 +182,8 @@ client.on('stream-subscribed', function (evt) {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <div id={"me"} className={"me"}></div>
-        <div id={"remote-container"}></div>
+        <div id={"me"} className={"me"} style={{width:'270px',height:'400px',display:'inline-block'}}></div>
+        <div id={"remote-container"} style={{width:'270px',height:'400px',display:'inline-block'}}></div>
 
         <div id={"sumerian-scene-dom-id"} style={{width:'270px',height:'400px',display:'inline-block'}}></div>
 

@@ -79,6 +79,51 @@
                     ]
                 }
             }
+        },
+        "CognitoUnauthPolicy": {
+            "Type": "AWS::IAM::Policy",
+            "Properties": {
+                "PolicyName": {
+                    "Ref": "UnauthPolicyName"
+                },
+                "Roles": [
+                    {
+                        "Ref": "UnauthRoleName"
+                    }
+                ],
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Action": [
+                                "sumerian:ViewRelease"
+                            ],
+                            "Effect": "Allow",
+                            "Resource": [
+                                {
+                                    "Fn::Join": [
+                                        "",
+                                        [
+                                            "arn:aws:sumerian:",
+                                            {
+                                                "Ref": "region"
+                                            },
+                                            ":",
+                                            {
+                                                "Ref": "AWS::AccountId"
+                                            },
+                                            ":project:",
+                                            {
+                                                "Ref": "projectName"
+                                            }
+                                        ]
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
         }
     },
     "Outputs": {

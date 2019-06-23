@@ -15,21 +15,21 @@
                 "cognito64681fff": {}
             },
             "xr": {
-                "SumerianAmplify": {
-                    "url": "https://sumerian.us-east-1.amazonaws.com/20180801/projects/Drafts/release/authTokens?sceneId=ea9011b8eaa34795af1ee07d00958c89.scene",
-                    "sceneId": "ea9011b8eaa34795af1ee07d00958c89.scene",
-                    "region": "us-east-1",
-                    "projectName": "Drafts"
-                },
-                "SumerianAmplify1": {
-                    "url": "https://sumerian.us-east-1.amazonaws.com/20180801/projects/Drafts/release/authTokens?sceneId=ea9011b8eaa34795af1ee07d00958c89.scene",
-                    "sceneId": "ea9011b8eaa34795af1ee07d00958c89.scene",
-                    "region": "us-east-1",
-                    "projectName": "Drafts"
-                },
                 "SumerianAmplify2": {
                     "url": "https://sumerian.us-east-1.amazonaws.com/20180801/projects/Drafts/release/authTokens?sceneId=ea9011b8eaa34795af1ee07d00958c89.scene",
                     "sceneId": "ea9011b8eaa34795af1ee07d00958c89.scene",
+                    "region": "us-east-1",
+                    "projectName": "Drafts"
+                },
+                "scene1": {
+                    "url": "https://sumerian.ap-south-1.amazonaws.com/20180801/projects/Drafts/release/authTokens?sceneId=a761e7abaf374269b0b3a42473eee186.scene",
+                    "sceneId": "a761e7abaf374269b0b3a42473eee186.scene",
+                    "region": "ap-south-1",
+                    "projectName": "Drafts"
+                },
+                "scenett": {
+                    "url": "https://sumerian.us-east-1.amazonaws.com/20180801/projects/Drafts/release/authTokens?sceneId=bed5f76fe20847959a5501c33957bfde.scene",
+                    "sceneId": "bed5f76fe20847959a5501c33957bfde.scene",
                     "region": "us-east-1",
                     "projectName": "Drafts"
                 }

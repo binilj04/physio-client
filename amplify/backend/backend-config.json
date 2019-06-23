@@ -12,15 +12,15 @@
 		}
 	},
 	"xr": {
-		"SumerianAmplify": {
-			"service": "Sumerian",
-			"providerPlugin": "awscloudformation"
-		},
-		"SumerianAmplify1": {
-			"service": "Sumerian",
-			"providerPlugin": "awscloudformation"
-		},
 		"SumerianAmplify2": {
+			"service": "Sumerian",
+			"providerPlugin": "awscloudformation"
+		},
+		"scene1": {
+			"service": "Sumerian",
+			"providerPlugin": "awscloudformation"
+		},
+		"scenett": {
 			"service": "Sumerian",
 			"providerPlugin": "awscloudformation"
 		}

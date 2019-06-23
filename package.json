@@ -8,6 +8,7 @@
     "agora-rtc-sdk": "^2.6.1",
     "aws-amplify": "^1.1.29",
     "aws-amplify-react": "^2.3.9",
+    "aws-sdk": "^2.480.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"

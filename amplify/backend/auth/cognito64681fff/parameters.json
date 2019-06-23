@@ -1,6 +1,6 @@
 {
     "identityPoolName": "physio_client_identitypool_9225f02f",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "lambdaLogPolicy": "physio_9225f02f_lambda_log_policy",
     "openIdLambdaRoleName": "physio_9225f02f_openid_lambda_role",
     "openIdRolePolicy": "physio_9225f02f_openid_pass_role_policy",
@@ -8,9 +8,9 @@
     "openIdLogPolicy": "physio_9225f02f_openid_lambda_log_policy",
     "userPoolName": "cognito64681fff_userpool_fecc04d4",
     "autoVerifiedAttributes": [
-        "email"
+        "phone_number"
     ],
-    "mfaConfiguration": "OFF",
+    "mfaConfiguration": "OPTIONAL",
     "mfaTypes": [
         "SMS Text Message"
     ],
@@ -64,5 +64,7 @@
             "Arn"
         ]
     },
-    "useDefault": "default"
+    "useDefault": "manual",
+    "thirdPartyAuth": false,
+    "hostedUI": false
 }
