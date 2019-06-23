@@ -19,10 +19,6 @@ import AWS from 'aws-sdk'
 
 
 
-
-
-
-
 function App() {
 
   const Polly = new AWS.Polly({ signatureVersion: 'v4', region: 'us-east-1' })
