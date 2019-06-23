@@ -178,12 +178,9 @@ client.on('stream-subscribed', function (evt) {
     
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div id={"me"} className={"me"} style={{width:'270px',height:'400px',display:'inline-block'}}></div>
-        <div id={"remote-container"} style={{width:'270px',height:'400px',display:'inline-block'}}></div>
+  
+        <div id={"me"} className={"me"} style={{width:'400px',height:'300px'}}></div>
+        <div id={"remote-container"} style={{width:'400px',height:'300px'}}></div>
 
         <div id={"sumerian-scene-dom-id"} style={{width:'270px',height:'400px',display:'inline-block'}}></div>
 
@@ -193,14 +190,7 @@ client.on('stream-subscribed', function (evt) {
         <div style={{height: '600px'}}>  
           <SumerianScene sceneName='SumerianAmplify2' />
         </div>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
 
        
       </header>
