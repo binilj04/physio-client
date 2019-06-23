@@ -2,8 +2,50 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import AgoraRTC from 'agora-rtc-sdk'
+import * as posenet from '@tensorflow-models/posenet';
+
+
+// import Amplify from 'aws-amplify';
+import Amplify, { XR } from 'aws-amplify';
+import aws_exports from './aws-exports';
+
+
+import { SumerianScene } from 'aws-amplify-react';
+import scene_config from './sumerian_exports';
+
+Amplify.configure(aws_exports);
+XR.configure({ // XR category configuration
+  SumerianProvider: { // Sumerian-specific configuration
+    region: 'us-east-1', // Sumerian scene region
+    scenes: {
+      "SumerianAmplify": {   // Friendly scene name
+          sceneConfig: scene_config // Scene JSON configuration
+        },
+    }
+  }
+});
+
+
+
+
+
+
 function App() {
 
+  
+  // Load scene with sceneName: "scene1" into dom element id: "sumerian-scene-dom-id"
+  const fetchData = async () => {
+    console.log("123")
+    await XR.loadScene("SumerianAmplify", "sumerian-scene-dom-id");
+    XR.start("SumerianAmplify");
+    console.log("456")
+  }
+  
+
+  var local_video=document.getElementById('video'+0);
+
+
+ 
 // Queries the container in which the remote feeds belong
 var remoteContainer= document.getElementById("remote-container");
 
@@ -32,6 +74,22 @@ function removeVideoStream (evt) {
 }
 
 
+function getpose(local_video){
+
+  posenet.load().then(function(net) {
+    
+    console.log("pose","pose",local_video);
+    const poses = net.estimatePoses(local_video, {
+      decodingMethod: 'single-person'
+    });
+    const pose = poses[0];
+    return pose;
+  }).then(function(pose){
+    console.log(pose,"pose",local_video);
+   
+   
+  })
+}
 
 
  
@@ -48,6 +106,12 @@ function removeVideoStream (evt) {
   client.join(null, 'test', null, function(uid) {
     console.log("User " + uid + " join channel successfully");
     remoteContainer= document.getElementById("remote-container");
+    local_video=document.getElementById('video'+uid);
+        
+    if(local_video !=null){
+      local_video.width=100;
+      local_video.height=100;
+    }
 
     let localStream = AgoraRTC.createStream({
       streamID: uid,
@@ -56,12 +120,18 @@ function removeVideoStream (evt) {
       screen: false}
     );
 
+    
+
     localStream.init(function() {
       console.log("getUserMedia successfully");
       localStream.play('me');
-  
+      
       client.publish(localStream, handleFail);
+     
+     getpose(local_video);
+     fetchData();
     
+      
     }, function (err) {
       console.log("getUserMedia failed", err);
     });
@@ -99,6 +169,8 @@ client.on('stream-subscribed', function (evt) {
 
 
   return (
+
+    
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -106,9 +178,16 @@ client.on('stream-subscribed', function (evt) {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <div id={"me"} className={"me"}></div>
-        <div id={"remote-container"}>
+        <div id={"remote-container"}></div>
 
-</div>
+        <div id={"sumerian-scene-dom-id"} style={{width:'270px',height:'400px',display:'inline-block'}}></div>
+
+        {/* <div style={{width:'270px',height:'400px',display:'inline-block'}}>
+        <SumerianScene sceneName="scene2" />
+        </div> */}
+        <div style={{height: '600px'}}>  
+          <SumerianScene sceneName='SumerianAmplify' />
+        </div>
         <a
           className="App-link"
           href="https://reactjs.org"
